@@ -5,13 +5,14 @@
         </div>
         <div style="text-align:center; margin-top:3em">
             <div ng-if="! Veridu.profile.user">Not signed</div>
+            <button type="button" style="color:white; background-color:darkred; border:0; padding:0.8em;" ng-click="Veridu.logout()" >Logout</button>
         </div>
+
 
         <div ng-if="Veridu.profile.user" style="text-align:center;">
             <img ng-src="{{Veridu.profile.user.picture}}" alt="" />
             <h3>{{Veridu.profile.user.name.value}} <small>{{Veridu.profile.user.name.score * 100 | number : 0}}%</small></h3>
 
-            <button type="button" ng-if="Veridu.profile.user" style="color:white; background-color:darkred; border:0; padding:0.8em;" ng-click="Veridu.logout()" >Logout</button>
             <br>
             <h2>Profile endpoint:</h2>
             <pre style="background: #f1f1f1; text-align:left; padding: 1.5em; font-size: 0.9em;">{{(Veridu.profile | json)}}</pre>
